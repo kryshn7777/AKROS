@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AKROS — Terms & Conditions</title>
+    <meta name="description"
+        content="AKROS Terms and Conditions of Service. Usage terms for the cognitive training platform.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <style>
+        /* ── AKROS Design System ──────────────────────────────────────────────── */
+        /* Implementing Rules:
+   1. 8pt spatial grid system
+   2. One primary (#3FD4FF) + one status palette (green/amber/red)
+   3. Institutional fintech aesthetic
+   4. No indie project feel — Bloomberg terminal gravitas
+*/
+
+        :root {
+            --bg-primary: #0B0F14;
+            --bg-surface: #121821;
+            --bg-elevated: #181F2A;
+            --accent: #3FD4FF;
+            --accent-dim: rgba(63, 212, 255, 0.13);
+            --accent-alt: #4DFFB8;
+            --text-primary: #E8EDF2;
+            --text-secondary: #8B95A3;
+            --text-muted: #5A6475;
+            --border: #1E2530;
+            --border-strong: #2C3647;
+            --font-mono: 'JetBrains Mono', 'SF Mono', 'Fira Code', monospace;
+            --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            --sp-1: 8px;
+            --sp-2: 16px;
+            --sp-3: 24px;
+            --sp-4: 32px;
+            --sp-6: 48px;
+        }
+
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            font-family: var(--font-sans);
+            line-height: 1.6;
+        }
+
+        /* ── Nav ─────────────────────────────────────────────────────────────── */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: var(--sp-2) var(--sp-4);
+            background: rgba(11, 15, 20, 0.92);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .nav-brand {
+            font-family: var(--font-sans);
+            font-weight: 700;
+            font-size: 16px;
+            color: var(--text-primary);
+            letter-spacing: 4px;
+            text-decoration: none;
+        }
+
+        .nav-back {
+            font-family: var(--font-mono);
+            font-size: 12px;
+            color: var(--accent);
+            text-decoration: none;
+            letter-spacing: 2px;
+            transition: opacity .15s;
+        }
+
+        .nav-back:hover {
+            opacity: 0.7;
+        }
+
+        /* ── Layout ──────────────────────────────────────────────────────────── */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 var(--sp-3);
+        }
+
+        .page-header {
+            padding-top: calc(80px + var(--sp-6));
+            padding-bottom: var(--sp-4);
+            border-bottom: 1px solid var(--border);
+            margin-bottom: var(--sp-4);
+        }
+
+        .page-label {
+            font-family: var(--font-mono);
+            font-size: 10px;
+            letter-spacing: 4px;
+            color: var(--accent);
+            margin-bottom: var(--sp-1);
+        }
+
+        .page-title {
+            font-family: var(--font-sans);
+            font-weight: 700;
+            font-size: clamp(24px, 4vw, 36px);
+            color: var(--text-primary);
+            letter-spacing: -0.3px;
+            margin-bottom: var(--sp-1);
+        }
+
+        .page-effective {
+            font-family: var(--font-mono);
+            font-size: 11px;
+            color: var(--text-secondary);
+        }
+
+        /* ── Content ─────────────────────────────────────────────────────────── */
+        .legal-content {
+            padding-bottom: var(--sp-6);
+        }
+
+        .legal-content h2 {
+            font-family: var(--font-sans);
+            font-weight: 600;
+            font-size: 18px;
+            color: var(--text-primary);
+            margin-top: var(--sp-4);
+            margin-bottom: var(--sp-2);
+            padding-bottom: var(--sp-1);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .legal-content h3 {
+            font-family: var(--font-sans);
+            font-weight: 600;
+            font-size: 15px;
+            color: var(--text-primary);
+            margin-top: var(--sp-3);
+            margin-bottom: var(--sp-1);
+        }
+
+        .legal-content p {
+            font-size: 14px;
+            line-height: 1.8;
+            color: var(--text-secondary);
+            margin-bottom: var(--sp-2);
+        }
+
+        .legal-content ul {
+            list-style: none;
+            margin-bottom: var(--sp-2);
+        }
+
+        .legal-content li {
+            font-size: 14px;
+            color: var(--text-secondary);
+            line-height: 1.8;
+            padding-left: var(--sp-2);
+            position: relative;
+        }
+
+        .legal-content li::before {
+            content: '·';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: 700;
+        }
+
+        .legal-content strong {
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        .legal-content code {
+            font-family: var(--font-mono);
+            font-size: 12px;
+            background: var(--bg-elevated);
+            padding: 2px 6px;
+            border: 1px solid var(--border);
+            color: var(--accent);
+        }
+
+        .notice-box {
+            background: var(--bg-surface);
+            border: 1px solid var(--border);
+            padding: var(--sp-2);
+            margin: var(--sp-3) 0;
+        }
+
+        .notice-box p {
+            font-size: 13px;
+            margin-bottom: 0;
+        }
+
+        .notice-label {
+            font-family: var(--font-mono);
+            font-size: 9px;
+            letter-spacing: 3px;
+            color: var(--accent);
+            margin-bottom: var(--sp-1);
+        }
+
+        /* ── Footer ──────────────────────────────────────────────────────────── */
+        .footer {
+            border-top: 1px solid var(--border);
+            padding: var(--sp-3) 0;
+        }
+
+        .footer-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: var(--sp-2);
+        }
+
+        .footer-brand {
+            display: flex;
+            align-items: center;
+            gap: var(--sp-2);
+        }
+
+        .footer-logo {
+            font-family: var(--font-sans);
+            font-weight: 700;
+            font-size: 14px;
+            color: var(--text-primary);
+            letter-spacing: 3px;
+        }
+
+        .footer-company {
+            font-family: var(--font-mono);
+            font-size: 9px;
+            color: var(--text-secondary);
+            letter-spacing: 2px;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: var(--sp-3);
+        }
+
+        .footer-links a {
+            font-family: var(--font-mono);
+            font-size: 10px;
+            color: var(--text-secondary);
+            text-decoration: none;
+            letter-spacing: 2px;
+            transition: color .15s;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent);
+        }
+
+        .footer-status {
+            font-family: var(--font-mono);
+            font-size: 9px;
+            color: var(--text-muted);
+            letter-spacing: 1px;
+        }
+
+        @media (max-width: 640px) {
+            .container {
+                padding: 0 var(--sp-2);
+            }
+
+            .footer-inner {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- ═══════════════ NAV ═══════════════ -->
+    <nav class="nav">
+        <a href="index.html" class="nav-brand">AKROS</a>
+        <a href="index.html" class="nav-back">← BACK TO HOME</a>
+    </nav>
+
+    <!-- ═══════════════ HEADER ═══════════════ -->
+    <div class="container">
+        <div class="page-header">
+            <div class="page-label">LEGAL</div>
+            <h1 class="page-title">Terms & Conditions</h1>
+            <div class="page-effective">EFFECTIVE DATE: FEBRUARY 19, 2026</div>
+        </div>
+
+        <!-- ═══════════════ CONTENT ═══════════════ -->
+        <div class="legal-content">
+
+            <div class="notice-box">
+                <div class="notice-label">AGREEMENT</div>
+                <p>By downloading, installing, or using AKROS, you agree to be bound by these Terms & Conditions. If you
+                    do not agree, do not use the application.</p>
+            </div>
+
+            <h2>1. Definitions</h2>
+            <ul>
+                <li><strong>"Service"</strong> — The AKROS mobile application, website, and all associated cognitive
+                    training content</li>
+                <li><strong>"User"</strong> — Any individual who accesses or uses the Service</li>
+                <li><strong>"Protocol"</strong> — A structured cognitive training session delivered through the Service
+                </li>
+                <li><strong>"Session Data"</strong> — Performance metrics, reaction times, accuracy scores, and other
+                    data generated during training</li>
+                <li><strong>"Mindy Labs"</strong> / <strong>"we"</strong> / <strong>"us"</strong> — The developer and
+                    operator of AKROS</li>
+            </ul>
+
+            <h2>2. Service Description</h2>
+            <p>AKROS provides research-grade cognitive training modules designed to measure and improve cognitive
+                performance. The Service includes adaptive algorithms, performance analytics, and protocol scheduling.
+            </p>
+            <p>AKROS is a <strong>training and measurement tool</strong>. It is <strong>not</strong> a medical device,
+                diagnostic tool, or therapeutic intervention. It does not diagnose, treat, cure, or prevent any disease
+                or medical condition.</p>
+
+            <h2>3. Account & Access Tiers</h2>
+
+            <h3>3.1 Free Tier</h3>
+            <p>The Free tier provides access to a limited set of cognitive training modules. No payment is required.
+                Free tier access may be modified or discontinued at our discretion.</p>
+
+            <h3>3.2 Pro Tier</h3>
+            <p>The Pro tier is available via monthly subscription at the price listed in the application. Pro access
+                includes all 11 training modules, full analytics, and the adaptive protocol calendar.</p>
+            <ul>
+                <li>Subscriptions auto-renew unless cancelled at least 24 hours before the renewal date</li>
+                <li>Cancellation takes effect at the end of the current billing period</li>
+                <li>Refunds are handled per Google Play Store policies</li>
+            </ul>
+
+            <h3>3.3 Institutional Tier</h3>
+            <p>Institutional licensing is available for organizations. Terms are governed by separate enterprise
+                agreements. Contact <code>sales@mindylabs.com</code> for details.</p>
+
+            <h2>4. User Obligations</h2>
+            <p>By using the Service, you agree to:</p>
+            <ul>
+                <li>Provide accurate information when creating an account</li>
+                <li>Use the Service only for its intended purpose (cognitive training and measurement)</li>
+                <li>Not reverse-engineer, decompile, or extract source code from the application</li>
+                <li>Not redistribute, resell, or sublicense access to the Service</li>
+                <li>Not use automated tools, bots, or scripts to interact with the Service</li>
+                <li>Not attempt to manipulate or falsify performance data</li>
+            </ul>
+
+            <h2>5. Intellectual Property</h2>
+            <p>All content, algorithms, training protocols, design elements, and branding within AKROS are the
+                intellectual property of Mindy Labs. This includes but is not limited to:</p>
+            <ul>
+                <li>Adaptive staircase algorithms and load computation methods</li>
+                <li>Module designs, stimulus sequences, and scoring formulae</li>
+                <li>User interface design, iconography, and visual assets</li>
+                <li>The AKROS name, logo, and associated trademarks</li>
+            </ul>
+            <p>Your Session Data remains your property. See our <a href="privacy.html"
+                    style="color:var(--accent)">Privacy Policy</a> for how we handle it.</p>
+
+            <h2>6. Disclaimers</h2>
+
+            <h3>6.1 No Medical Advice</h3>
+            <p>AKROS is <strong>not</strong> a substitute for professional medical advice, diagnosis, or treatment. If
+                you have concerns about your cognitive health, consult a qualified healthcare professional. Never
+                disregard medical advice or delay seeking treatment because of information obtained from the Service.
+            </p>
+
+            <h3>6.2 Performance Results</h3>
+            <p>Cognitive training outcomes vary between individuals. We do not guarantee specific performance
+                improvements, skill transfer, or real-world benefits. Performance metrics displayed in the app reflect
+                in-app measurement only.</p>
+
+            <h3>6.3 Service Availability</h3>
+            <p>The Service is provided "as is" and "as available." We do not guarantee uninterrupted access.
+                Maintenance, updates, or unforeseen issues may cause temporary unavailability.</p>
+
+            <h2>7. Limitation of Liability</h2>
+            <p>To the maximum extent permitted by applicable law, Mindy Labs shall not be liable for:</p>
+            <ul>
+                <li>Any indirect, incidental, special, or consequential damages</li>
+                <li>Loss of data, profits, or business opportunities</li>
+                <li>Decisions made based on performance metrics or analytics provided by the Service</li>
+                <li>Service interruptions or data loss</li>
+            </ul>
+            <p>Our total liability, if any, shall not exceed the amount paid by you for the Service in the 12 months
+                preceding the claim.</p>
+
+            <h2>8. Termination</h2>
+            <ul>
+                <li>You may stop using the Service and delete the application at any time</li>
+                <li>We may suspend or terminate your access if you violate these Terms</li>
+                <li>Upon termination, your license to use the Service ends immediately</li>
+                <li>Sections that by their nature should survive termination (IP, disclaimers, liability) shall survive
+                </li>
+            </ul>
+
+            <h2>9. Modifications</h2>
+            <p>We reserve the right to modify these Terms at any time. Material changes will be communicated via in-app
+                notification at least 14 days before taking effect. Continued use after changes constitutes acceptance
+                of the updated Terms.</p>
+
+            <h2>10. Governing Law</h2>
+            <p>These Terms are governed by and construed in accordance with applicable law. Any disputes arising from or
+                related to these Terms or the Service shall be resolved through good-faith negotiation before pursuing
+                formal proceedings.</p>
+
+            <h2>11. Contact</h2>
+            <div class="notice-box">
+                <div class="notice-label">LEGAL INQUIRIES</div>
+                <p><strong>Mindy Labs</strong><br>
+                    Email: <code>legal@mindylabs.com</code><br>
+                    For privacy-related inquiries: <code>privacy@mindylabs.com</code></p>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- ═══════════════ FOOTER ═══════════════ -->
+    <footer class="footer">
+        <div class="container footer-inner">
+            <div class="footer-brand"><span class="footer-logo">AKROS</span><span class="footer-company">MINDY
+                    LABS</span></div>
+            <div class="footer-links"><a href="privacy.html">PRIVACY</a><a href="terms.html">TERMS</a><a
+                    href="index.html">HOME</a></div>
+            <div class="footer-status">SYSTEM OPERATIONAL · v1.0</div>
+        </div>
+    </footer>
+</body>
+
+</html>
